@@ -6,7 +6,8 @@ using UnityEngine.Purchasing.MiniJSON;
 
 public class collisionsObjet : MonoBehaviour
 {
-
+    [SerializeField]
+    private AudioSource _son;
 
     [SerializeField] private TMP_Text _points;
 
@@ -24,6 +25,8 @@ public class collisionsObjet : MonoBehaviour
 
 
             Destroy(other.gameObject);
+
+            _son.PlayOneShot(_son.clip);
 
 
         }
